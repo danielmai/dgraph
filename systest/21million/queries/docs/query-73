@@ -1,0 +1,10 @@
+{
+   data(func: eq(name, "Alice")) {
+     name
+     mobile
+     car @facets(car_since: since)
+     friend @facets(close_friend: close) {
+       name
+     }
+   }
+}

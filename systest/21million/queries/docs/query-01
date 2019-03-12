@@ -1,0 +1,8 @@
+{
+  bladerunner(func: eq(name@en, "Blade Runner")) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}

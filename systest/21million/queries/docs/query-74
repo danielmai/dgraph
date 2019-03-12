@@ -1,0 +1,8 @@
+{
+  data(func: eq(name, "Alice")) {
+    name
+    friend {
+      name
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  var(func: anyofterms(name, "Alice Bob Charlie")) {
+    num_raters as math(1)
+    rated @facets(r as rating) {
+      total_rating as math(r) # sum of the 3 ratings
+      average_rating as math(total_rating / num_raters)
+    }
+  }
+  data(func: uid(total_rating)) {
+    name
+    val(total_rating)
+    val(average_rating)
+  }
+
+}

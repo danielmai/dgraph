@@ -1,0 +1,7 @@
+{
+  data(func: eq(name, "Alice")) {
+    friend @facets(eq(close, true)) {
+      name
+    }
+  }
+}

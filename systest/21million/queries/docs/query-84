@@ -1,0 +1,10 @@
+
+{
+  data(func: anyofterms(name, "Alice Bob")) {
+    name
+    rated @facets(r as rating) {
+      name
+    }
+    avg(val(r))
+  }
+}

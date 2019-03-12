@@ -1,0 +1,8 @@
+{
+  me(func: anyofterms(name, "Alice Bob Charlie")) {
+    name
+    rated @facets(orderdesc: rating) {
+      name
+    }
+  }
+}

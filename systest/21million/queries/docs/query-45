@@ -1,0 +1,27 @@
+{
+  Mackenzie(func:allofterms(name@en, "Mackenzie Crook")) {
+    name@en
+    actor.film {
+      performance.film {
+        uid
+        name@en
+      }
+      performance.character {
+        name@en
+      }
+    }
+  }
+
+  Jack(func:allofterms(name@en, "Jack Davenport")) {
+    name@en
+    actor.film {
+      performance.film {
+        uid
+        name@en
+      }
+      performance.character {
+        name@en
+      }
+    }
+  }
+}

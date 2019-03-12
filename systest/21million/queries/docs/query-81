@@ -1,0 +1,15 @@
+{
+  var(func: eq(name, "Alice")) {
+    friend @facets(a as close, b as relative)
+  }
+
+  friend(func: uid(a)) {
+    name
+    val(a)
+  }
+
+  relative(func: uid(b)) {
+    name
+    val(b)
+  }
+}

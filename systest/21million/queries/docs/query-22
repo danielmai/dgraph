@@ -1,0 +1,13 @@
+{
+  var(func: eq(name@en,"Minority Report")) {
+    d as initial_release_date
+  }
+
+  me(func: eq(name@en, "Steven Spielberg")) {
+    name@en
+    director.film @filter(ge(initial_release_date, val(d))) {
+      initial_release_date
+      name@en
+    }
+  }
+}

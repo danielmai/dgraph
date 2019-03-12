@@ -1,0 +1,9 @@
+{
+  data(func: eq(name, "Alice")) {
+    name
+    rated @facets(r as rating) {
+      name
+    }
+    avg(val(r))
+  }
+}

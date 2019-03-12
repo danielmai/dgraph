@@ -1,0 +1,9 @@
+{
+  me(func: allofterms(name@en, "Baz Luhrmann")) {
+    name@en
+    director.film (first:5, after: 0x8116e4) {
+      uid
+      name@en
+    }
+  }
+}

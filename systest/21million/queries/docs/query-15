@@ -1,0 +1,5 @@
+{
+  directors(func: match(name@en, Stephen, 3)) {
+    name@en
+  }
+}

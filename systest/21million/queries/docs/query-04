@@ -1,0 +1,8 @@
+{
+  movies(func: uid(0x579683, 0x5af1c7)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}

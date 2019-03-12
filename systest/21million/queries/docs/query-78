@@ -1,0 +1,7 @@
+{
+  data(func: eq(name, "Alice")) {
+    friend @facets(eq(close, true)) @facets(relative) { # filter close friends and give relative status
+      name
+    }
+  }
+}

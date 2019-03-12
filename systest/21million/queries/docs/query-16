@@ -1,0 +1,5 @@
+{
+  movie(func:alloftext(name@en, "the dog which barks")) {
+	 name@en
+  }
+}

@@ -1,0 +1,8 @@
+{
+  bladerunner(func: uid(0x579683)) {
+    uid
+    name@en
+    initial_release_date
+    netflix_id
+  }
+}
