@@ -740,14 +740,42 @@ mutation {
 }
 ```
 
+### Reset Groot Password
+
+If you've forgotten the password to your groot user, then you may reset the groot password (or
+the password for any user) by the following these steps. You'll need to have access to update the
+Dgraph cluster configuration.
+
+1. Stop Dgraph Alpha. If you're running a high available cluster, then you can stop this Alpha.
+2. Turn off ACLs by removing the `--acl_hmac_secret` config flag in the Alph config. This leaves the
+   Alpha open with no ACL rules, so be sure to secure access to this Alpha, including
+   stopping request traffic to this Alpha.
+3. Start Dgraph Alpha.
+4. Connect to Dgraph using Ratel and run the following upsert mutation to update the groot password
+   to `newpassword` (choose a secure password):
+   ```text
+   upsert {
+     query {
+       groot as var(func: eq(dgraph.xid, "groot"))
+     }
+     mutation {
+       set {
+         uid(groot) <dgraph.password> "newpassword" .
+       }
+     }
+   }
+   ```
+5. Restart Dgraph Alpha with ACLs turned on by setting the `--acl_hmac_secret` config flag.
+6. Login as groot with your new password.
+
 ## Encryption at Rest
 
-{{% notice "note" %}}
-This feature was introduced in [v1.1.1](https://github.com/dgraph-io/dgraph/releases/tag/v1.1.1).
-For migrating unencrypted data to a new Dgraph cluster with encryption enabled, you need to
-[export the database](https://dgraph.io/docs/deploy/#exporting-database) and [fast data load](https://dgraph.io/docs/deploy/#fast-data-loading),
-preferably using the [bulk loader](https://dgraph.io/docs/deploy/#bulk-loader).
-{{% /notice %}}
+{{% notice "note" %}} This feature was introduced in
+[v1.1.1](https://github.com/dgraph-io/dgraph/releases/tag/v1.1.1). For migrating unencrypted data to
+a new Dgraph cluster with encryption enabled, you need to [export the
+database](https://dgraph.io/docs/deploy/#exporting-database) and [fast data
+load](https://dgraph.io/docs/deploy/#fast-data-loading), preferably using the [bulk
+loader](https://dgraph.io/docs/deploy/#bulk-loader). {{% /notice %}}
 
 Encryption at rest refers to the encryption of data that is stored physically in any
 digital form. It ensures that sensitive data on disks is not readable by any user
